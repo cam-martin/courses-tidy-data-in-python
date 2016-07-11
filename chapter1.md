@@ -43,7 +43,7 @@ messy = pd.read_csv(url3, sep=',')
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
 
 msg_1 = "In `df1`, `dogs`, `cats`, `birds` are each a variable so it does not violate rule #1."
-msg_2 = "The three people in `df1` represent three different observations so it does not violate rule #1."
+msg_2 = "The three people in `df1` represent three different observations so it does not violate rule #2."
 msg_3 = "Exactly! See detailed explanation in next exercise."
 test_mc(3, [msg_1, msg_2, msg_3])
 ```
@@ -51,7 +51,7 @@ test_mc(3, [msg_1, msg_2, msg_3])
 --- type:NormalExercise lang:python xp:100 skills:1 key:431ad8bd98
 ## Using Melt to Tidy Data
 
-In `df2`, the years `1980`, `1981`, `1982`, and `1983` mark the years when BMI is observed. Thus, they represent three different observations and should be seperated in three rows. A great tool to achieve this is the melt function in the pandas package. Its basic syntax is `pd.melt(df, id_vars=l)`, where `df` is the name of the dataframe we're dealing with and `l` is a list of all the columns that we want to keep as columns. All the other columns will be "molten" together in different rows. To get a more concrete idea, try `melt` yourself to *tidy* the dataset `df2`!
+In `df2`, the years `1980`, `1981`, `1982`, and `1983` mark the years when BMI is observed. Thus, they represent four different observations and should be separated in four rows. A great tool to achieve this is the melt function in the pandas package. Its basic syntax is `pd.melt(df, id_vars=l)`, where `df` is the name of the dataframe we're dealing with and `l` is a list of all the columns that we want to keep as columns. All the other columns will be "molten" together in different rows. To get a more concrete idea, try `melt` yourself to *tidy* the dataset `df2`!
 
 *** =instructions
 - Import `pandas` using the alias `pd`.
@@ -113,7 +113,7 @@ success_msg("Great job!")
 --- type:NormalExercise lang:python xp:100 skills:1 key:3be71779cd
 ## Renaming Columns
 
-Did you see how easy it was? In one command you already tidied up your dataset! Now we just need a bit further fine-tuning. Change the column names with pandas' rename function. Its syntax is `df.rename(columns = d, inplace = Flase)`, where `d` is a dictionary where the keys are the columns you want to change, and the values are the new names for these columns. The code `inplace = Flase` means the result would be stored in a new DataFrame instead of the original one.
+Did you see how easy it was? In one command you already tidied up your dataset! Now we just need a bit further fine-tuning. Change the column names with pandas' rename function. Its syntax is `df.rename(columns = d, inplace = False)`, where `d` is a dictionary where the keys are the columns you want to change, and the values are the new names for these columns. The code `inplace = False` means the result would be stored in a new DataFrame instead of the original one.
 
 
 *** =instructions
@@ -215,7 +215,7 @@ test_mc(1, [msg_success, msg_2, msg_3, msg_3])
 The three columns, `Black`, `Blue`, and `Brown`, essentially represent the same variable: eye color. It would make much more sense to merge them into one column. Use `melt` to do it!
 
 *** =instructions
-- Use `Melt` to leave `Names` and `Wear_Glasses` intact and combine everything else.
+- Use `Melt` to leave `Name` and `Wear_Glasses` intact and combine everything else.
 - Rename the `variable` column to `Eye_Color`.
 - Hit "Submit Answer" to print out the resulting dataframe.
 
